@@ -14,7 +14,7 @@ public class GetTokenQueryHandler(IIdentityService identityService, ITokenServic
 {
     public async Task<ServiceResult<LoginResponse>> Handle(GetTokenQuery request, CancellationToken cancellationToken)
     {
-        var user = await identityService.CheckUserPassword(request.Email, request.Password);
+        var user = await identityService.CheckUserPasswordAsync(request.Email, request.Password);
 
         if (user is null)
             return ServiceResult.Failed<LoginResponse>(ServiceError.ForbiddenError);

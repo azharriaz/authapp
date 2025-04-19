@@ -2,7 +2,7 @@
 using AuthApp.Application.Common.Interfaces;
 using AuthApp.Domain.Models;
 
-namespace AuthApp.Application.Auth.Commands;
+namespace AuthApp.Application.Auth.Commands.Login;
 
 public class LoginCommand : IRequestWrapper<LoginResponse>
 {
@@ -14,7 +14,7 @@ public class LoginCommandHandler(IIdentityService identityService, ITokenService
 {
     public async Task<ServiceResult<LoginResponse>> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
-        var user = await identityService.CheckUserPassword(request.Username, request.Password);
+        var user = await identityService.CheckUserPasswordAsync(request.Username, request.Password);
 
         if (user is null)
         {

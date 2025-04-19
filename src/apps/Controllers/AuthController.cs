@@ -1,6 +1,6 @@
 ﻿using AuthApp.Api.Controllers;
 using AuthApp.Application.ApplicationUser.Queries.GetToken;
-using AuthApp.Application.Auth.Commands;
+using AuthApp.Application.Auth.Commands.Login;
 using AuthApp.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 

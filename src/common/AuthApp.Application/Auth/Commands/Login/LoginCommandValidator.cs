@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using System.Text.RegularExpressions;
 
-namespace AuthApp.Application.Auth.Commands;
+namespace AuthApp.Application.Auth.Commands.Login;
 
 public class GetTokenQueryValidator : AbstractValidator<LoginCommand>
 {

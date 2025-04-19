@@ -2,6 +2,7 @@
 using AuthApp.Domain.Authentication;
 using AuthApp.Infrastructure.Identity;
 using AuthApp.Infrastructure.Persistence;
+using AuthApp.Infrastructure.Persistence.Repositories;
 using AuthApp.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -51,6 +52,7 @@ public static class DependencyInjection
         services.AddTransient<IDateTime, DateTimeService>();
         services.AddTransient<IIdentityService, IdentityService>();
         services.AddTransient<ITokenService, TokenService>();
+        services.AddScoped<IRefreshTokenRepository, EfRefreshTokenRepository>();
 
         services.AddAuthentication(options =>
         {

@@ -1,5 +1,6 @@
 ﻿using AuthApp.Application.Common.Interfaces;
 using AuthApp.Domain.Entities;
+using AuthApp.Domain.Models;
 using AuthApp.Infrastructure.Identity;
 
 using Duende.IdentityServer.EntityFramework.Options;
@@ -24,6 +25,7 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, 
     }
 
     public DbSet<Product> Products { get; set; }
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

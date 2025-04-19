@@ -1,6 +1,7 @@
 ﻿using AuthApp.Api.Filters;
 using AuthApp.Application;
 using AuthApp.Infrastructure;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.OpenApi.Models;
 using OpenTelemetry.Logs;
 using OpenTelemetry.Metrics;
@@ -10,6 +11,7 @@ using Serilog;
 using Serilog.Core;
 using Serilog.Events;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace AuthApp.API.Extensions;
 
@@ -20,6 +22,15 @@ public static class ServiceCollectionExtensions
         // Load environment-specific configuration files.
         builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
             .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
+
+        builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+        builder.Services.Configure<RequestLocalizationOptions>(options => {
+            var supportedCultures = new[] { "en-IN", "hi-IN" };
+            options.DefaultRequestCulture = new RequestCulture("en-IN");
+            options.SupportedCultures = supportedCultures.Select(c => new CultureInfo(c)).ToList();
+            options.SupportedUICultures = supportedCultures.Select(c => new CultureInfo(c)).ToList();
+        });
 
         var logger = Log.Logger = new LoggerConfiguration()
             .Enrich.FromLogContext()
