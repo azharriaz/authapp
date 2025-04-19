@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "dkKkbmMdDOu9T0tvJiU+tDWXRsbu+w9VKxy0HOjLUTE=",
+  "Source": "ExchangeCore.API",
+  "BasePath": "_content/ExchangeCore.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

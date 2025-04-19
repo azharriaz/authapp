@@ -1,0 +1,13 @@
+C:\source\BCard\src\common\ExchangeCore.Domain\bin\Debug\net9.0\ExchangeCore.Domain.deps.json
+C:\source\BCard\src\common\ExchangeCore.Domain\bin\Debug\net9.0\ExchangeCore.Domain.dll
+C:\source\BCard\src\common\ExchangeCore.Domain\bin\Debug\net9.0\ExchangeCore.Domain.pdb
+C:\source\BCard\src\common\ExchangeCore.Domain\obj\Debug\net9.0\ExchangeCore.Domain.csproj.AssemblyReference.cache
+C:\source\BCard\src\common\ExchangeCore.Domain\obj\Debug\net9.0\ExchangeCore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\source\BCard\src\common\ExchangeCore.Domain\obj\Debug\net9.0\ExchangeCore.Domain.AssemblyInfoInputs.cache
+C:\source\BCard\src\common\ExchangeCore.Domain\obj\Debug\net9.0\ExchangeCore.Domain.AssemblyInfo.cs
+C:\source\BCard\src\common\ExchangeCore.Domain\obj\Debug\net9.0\ExchangeCore.Domain.csproj.CoreCompileInputs.cache
+C:\source\BCard\src\common\ExchangeCore.Domain\obj\Debug\net9.0\ExchangeCore.Domain.dll
+C:\source\BCard\src\common\ExchangeCore.Domain\obj\Debug\net9.0\refint\ExchangeCore.Domain.dll
+C:\source\BCard\src\common\ExchangeCore.Domain\obj\Debug\net9.0\ExchangeCore.Domain.pdb
+C:\source\BCard\src\common\ExchangeCore.Domain\obj\Debug\net9.0\ref\ExchangeCore.Domain.dll
+C:\source\BCard\src\common\ExchangeCore.Domain\obj\Debug\net9.0\ExchangeCore.Domain.sourcelink.json
