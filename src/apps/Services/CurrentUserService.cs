@@ -1,28 +1,26 @@
-﻿using System.Security.Claims;
-using AuthApp.Application.Common.Interfaces;
-using Microsoft.AspNetCore.Http;
+﻿using AuthApp.Application.Common.Interfaces;
+using System.Security.Claims;
 
-namespace AuthApp.Api.Services
+namespace AuthApp.Api.Services;
+
+/// <summary>
+/// UserId
+/// </summary>
+public class CurrentUserService : ICurrentUserService
 {
-    /// <summary>
-    /// UserId
-    /// </summary>
-    public class CurrentUserService : ICurrentUserService
-    {
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="httpContextAccessor"></param>
-        public CurrentUserService(IHttpContextAccessor httpContextAccessor)
-        {
-            _httpContextAccessor = httpContextAccessor;
-        }
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-        /// <summary>
-        /// Current userId
-        /// </summary>
-        public string UserId => _httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    /// <param name="httpContextAccessor"></param>
+    public CurrentUserService(IHttpContextAccessor httpContextAccessor)
+    {
+        _httpContextAccessor = httpContextAccessor;
     }
+
+    /// <summary>
+    /// Current userId
+    /// </summary>
+    public string UserId => _httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
 }

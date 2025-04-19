@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/obj
+/.vs/ProjectEvaluation
+/.vs/AuthApp/config
+/.vs/AuthApp/DesignTimeBuild
+/.vs/AuthApp/FileContentIndex
+/.vs/AuthApp/v17
+/src/common/AuthApp.Application/bin/Debug/net9.0
+/src/common/AuthApp.Application/obj
+/src/common/AuthApp.Domain/bin/Debug/net9.0
+/src/common/AuthApp.Domain/obj
+/src/common/AuthApp.Infrastructure/bin/Debug/net9.0
+/src/common/AuthApp.Infrastructure/obj/Debug/net9.0
+/src/common/AuthApp.Infrastructure/obj
+/src/common/AuthApp.Infrastructure.SqlServer/bin/Debug/net9.0
+/src/common/AuthApp.Infrastructure.SqlServer/obj

@@ -1,5 +1,5 @@
-﻿using AuthApp.Application.Common.Exceptions;
-using AuthApp.Application.Common.Models;
+﻿using AuthApp.Domain.Exceptions;
+using AuthApp.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 

@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apps", "apps", "{9F8C7120-6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{6EEE5E21-B710-4681-9FA7-60F6AECA8C7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApp.Application", "src\common\ExchangeCore.Application\AuthApp.Application.csproj", "{EF5A6536-2168-45E7-9556-6568BFF307CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApp.Application", "src\common\AuthApp.Application\AuthApp.Application.csproj", "{EF5A6536-2168-45E7-9556-6568BFF307CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApp.Domain", "src\common\ExchangeCore.Domain\AuthApp.Domain.csproj", "{A17ADB9A-91C1-4DB5-801A-C249F6937DDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApp.Domain", "src\common\AuthApp.Domain\AuthApp.Domain.csproj", "{A17ADB9A-91C1-4DB5-801A-C249F6937DDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApp.Infrastructure", "src\common\ExchangeCore.Infrastructure\AuthApp.Infrastructure.csproj", "{78FD71F9-C8A6-4696-865F-B2325B01243E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApp.Infrastructure", "src\common\AuthApp.Infrastructure\AuthApp.Infrastructure.csproj", "{78FD71F9-C8A6-4696-865F-B2325B01243E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApp.SqlServer", "src\common\AuthApp.SqlServer\AuthApp.SqlServer.csproj", "{CEF4EA80-83FE-401A-A5CB-48D6A52B10A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApp.Infrastructure.SqlServer", "src\common\AuthApp.Infrastructure.SqlServer\AuthApp.Infrastructure.SqlServer.csproj", "{CEF4EA80-83FE-401A-A5CB-48D6A52B10A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
