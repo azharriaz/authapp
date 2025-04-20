@@ -1,4 +1,6 @@
-﻿namespace AuthApp.Domain.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace AuthApp.Domain.Models;
 
 /// <summary>
 /// A standard response for service calls.
@@ -8,6 +10,7 @@ public class ServiceResult<T> : ServiceResult
 {
     public T Data { get; set; }
 
+    [JsonConstructor]
     public ServiceResult(T data)
     {
         Data = data;

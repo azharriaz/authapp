@@ -170,10 +170,13 @@ public class IdentityService(UserManager<ApplicationUser> userManager, IMapper m
     /// <param name="roles"></param>
     /// <returns></returns>
     /// <exception cref="NotFoundException"></exception>
-    public async Task AssignRolesToUser(string userId, IEnumerable<string> roles)
+    public async Task AssignRolesToUserAsync(string userId, IEnumerable<string> roles)
     {
         var user = await userManager.FindByIdAsync(userId);
-        if (user == null) throw new NotFoundException("User not found");
+        if (user is null) 
+        {
+            throw new NotFoundException("User not found");
+        } 
 
         await userManager.AddToRolesAsync(user, roles);
     }

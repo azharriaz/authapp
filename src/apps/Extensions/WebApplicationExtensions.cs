@@ -1,5 +1,4 @@
-﻿using AuthApp.Application.Common.Interfaces;
-using AuthApp.Infrastructure.Identity;
+﻿using AuthApp.Infrastructure.Identity;
 using AuthApp.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +26,8 @@ public static class WebApplicationExtensions
 
         app.UseAuthentication();
         app.UseAuthorization();
+
+        app.UseRequestLocalization();
 
         app.UseSwagger();
         app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Exchange Core API"));

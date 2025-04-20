@@ -17,7 +17,7 @@ public interface IIdentityService
 
     #region Auth
     Task<ApplicationUserDto> CheckUserPasswordAsync(string username, string password);
-    Task AssignRolesToUser(string userId, IEnumerable<string> roles);
+    Task AssignRolesToUserAsync(string userId, IEnumerable<string> roles);
     Task<bool> UserIsInRoleAsync(string userId, string role);
     #endregion
 

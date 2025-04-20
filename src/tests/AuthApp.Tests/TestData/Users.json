@@ -1,0 +1,23 @@
+﻿{
+  "Create": {
+    "username": "JohnDoe",
+    "email": "john@example.com",
+    "password": "Azhar@321",
+    "firstname": "John",
+    "lastname": "Doe",
+    "roles": [ "Manager" ]
+  },
+  "Convert": {
+    "amount": 10,
+    "fromCurrency": "GBP",
+    "toCurrency": "USD"
+  },
+  "ConvertResponse": {
+    "amount": 10.0,
+    "base": "GBP",
+    "date": "2024-05-17",
+    "rates": {
+      "USD": 12.6557
+    }
+  }
+}

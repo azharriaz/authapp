@@ -5,6 +5,9 @@
 /// </summary>
 public class ApplicationUserDto
 {
+    public ApplicationUserDto()
+    {
+    }
     public string Id { get; set; }
 
     public string UserName { get; set; }

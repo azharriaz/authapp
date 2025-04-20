@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApp.Infrastructure", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApp.Infrastructure.SqlServer", "src\common\AuthApp.Infrastructure.SqlServer\AuthApp.Infrastructure.SqlServer.csproj", "{CEF4EA80-83FE-401A-A5CB-48D6A52B10A1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{50C14385-5D9D-4CEA-97AA-CBF6F20AF17F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApp.Tests", "src\tests\AuthApp.Tests\AuthApp.Tests.csproj", "{F3B380AF-55E0-4164-A2B3-D90881EE9C09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,10 @@ Global
 		{CEF4EA80-83FE-401A-A5CB-48D6A52B10A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEF4EA80-83FE-401A-A5CB-48D6A52B10A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEF4EA80-83FE-401A-A5CB-48D6A52B10A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3B380AF-55E0-4164-A2B3-D90881EE9C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B380AF-55E0-4164-A2B3-D90881EE9C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B380AF-55E0-4164-A2B3-D90881EE9C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B380AF-55E0-4164-A2B3-D90881EE9C09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +65,8 @@ Global
 		{A17ADB9A-91C1-4DB5-801A-C249F6937DDE} = {6EEE5E21-B710-4681-9FA7-60F6AECA8C7E}
 		{78FD71F9-C8A6-4696-865F-B2325B01243E} = {6EEE5E21-B710-4681-9FA7-60F6AECA8C7E}
 		{CEF4EA80-83FE-401A-A5CB-48D6A52B10A1} = {6EEE5E21-B710-4681-9FA7-60F6AECA8C7E}
+		{50C14385-5D9D-4CEA-97AA-CBF6F20AF17F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{F3B380AF-55E0-4164-A2B3-D90881EE9C09} = {50C14385-5D9D-4CEA-97AA-CBF6F20AF17F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3477B1B4-FDE3-4138-B704-C14BAD90E1F7}

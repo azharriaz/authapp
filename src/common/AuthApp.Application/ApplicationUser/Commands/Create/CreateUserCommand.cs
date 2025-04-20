@@ -25,7 +25,7 @@ public class CreateUserCommandHandler(IIdentityService identityService) : IReque
             return ServiceResult.Failed<ApplicationUserDto>(ServiceError.CustomMessage(result.Errors?.ToString() ?? string.Empty));
         }
 
-        await identityService.AssignRolesToUser(userId, request.Roles);
+        await identityService.AssignRolesToUserAsync(userId, request.Roles);
 
         return ServiceResult.Success(new ApplicationUserDto
         {
