@@ -9,7 +9,7 @@ public class EfRefreshTokenRepository(ApplicationDbContext context) : IRefreshTo
     public async Task<RefreshToken> GetByUserIdAsync(string userId)
     {
         return await context.RefreshTokens
-            .FirstOrDefaultAsync(t => t.UserId == userId && t.Expires > DateTime.UtcNow && !t.IsRevoked);
+            .FirstOrDefaultAsync(t => t.UserId == userId && t.Expires > DateTime.UtcNow && !t.Revoked.HasValue);
     }
 
     public async Task<RefreshToken> GetByTokenAsync(string token)

@@ -2,7 +2,7 @@
 using AuthApp.Application.Dto;
 using AuthApp.Domain.Models;
 
-namespace AuthApp.Application.Auth.Commands.CreateRole;
+namespace AuthApp.Application.ApplicationRole.Commands.CreateRole;
 
 public class CreateRoleCommand : IRequestWrapper<ApplicationRoleDto>
 {

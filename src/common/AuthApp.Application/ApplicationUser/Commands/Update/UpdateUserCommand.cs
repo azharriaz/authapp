@@ -2,7 +2,7 @@
 using AuthApp.Application.Dto;
 using AuthApp.Domain.Models;
 
-namespace AuthApp.Application.Auth.Commands.UpdateUser;
+namespace AuthApp.Application.ApplicationUser.Commands.UpdateUser;
 
 public class UpdateUserCommand : IRequestWrapper<ApplicationUserDto>
 {

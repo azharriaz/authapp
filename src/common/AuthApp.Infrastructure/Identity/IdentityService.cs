@@ -1,4 +1,5 @@
-﻿using AuthApp.Application.Common.Interfaces;
+﻿using AuthApp.Application.ApplicationUser.Commands.CreateUser;
+using AuthApp.Application.Common.Interfaces;
 using AuthApp.Application.Dto;
 using AuthApp.Domain.Exceptions;
 using AuthApp.Domain.Models;
@@ -34,15 +35,18 @@ public class IdentityService(UserManager<ApplicationUser> userManager, IMapper m
         return null;
     }
 
-    public async Task<(Result Result, string UserId)> CreateUserAsync(string userName, string password)
+    public async Task<(Result Result, string UserId)> CreateUserAsync(CreateUserCommand input)
     {
         var user = new ApplicationUser
         {
-            UserName = userName,
-            Email = userName,
+            UserName = input.Username,
+            Email = input.Email,
+            Name = input.FirstName,
+            LastName = input.LastName,
+            Gsm = string.Empty
         };
 
-        var result = await userManager.CreateAsync(user, password);
+        var result = await userManager.CreateAsync(user, input.Password);
 
         return (result.ToApplicationResult(), user.Id);
     }
@@ -88,7 +92,7 @@ public class IdentityService(UserManager<ApplicationUser> userManager, IMapper m
     public async Task<ApplicationRoleDto> GetRoleByIdAsync(string roleId)
     {
         var role = await roleManager.FindByIdAsync(roleId);
-        return role == null ? null : mapper.Map<ApplicationRoleDto>(role);
+        return role is null ? null : mapper.Map<ApplicationRoleDto>(role);
     }
 
     public async Task<List<ApplicationRoleDto>> GetRolesAsync()
@@ -131,7 +135,7 @@ public class IdentityService(UserManager<ApplicationUser> userManager, IMapper m
     public async Task<Result> UpdateRoleAsync(string roleId, string newName, string newDescription)
     {
         var role = await roleManager.FindByIdAsync(roleId);
-        if (role == null) return Result.Failure(new[] { "Role not found" });
+        if (role is null) return Result.Failure(new[] { "Role not found" });
 
         role.Name = newName;
         role.NormalizedName = newName.ToUpper();
@@ -154,7 +158,7 @@ public class IdentityService(UserManager<ApplicationUser> userManager, IMapper m
     public async Task<Result> DeleteRoleAsync(string roleId)
     {
         var role = await roleManager.FindByIdAsync(roleId);
-        return role == null
+        return role is null
             ? Result.Success()
             : (await roleManager.DeleteAsync(role)).ToApplicationResult();
     }
@@ -184,7 +188,7 @@ public class IdentityService(UserManager<ApplicationUser> userManager, IMapper m
     public async Task UpdateUserRoles(string userId, IEnumerable<string> newRoles)
     {
         var user = await userManager.FindByIdAsync(userId);
-        if (user == null) throw new NotFoundException("User not found");
+        if (user is null) throw new NotFoundException("User not found");
 
         var currentRoles = await userManager.GetRolesAsync(user);
         await userManager.RemoveFromRolesAsync(user, currentRoles);
@@ -224,5 +228,16 @@ public class IdentityService(UserManager<ApplicationUser> userManager, IMapper m
         return updateResults.All(r => r.Succeeded)
             ? Result.Success()
             : Result.Failure(updateResults.SelectMany(r => r.Errors).Select(e => e.Description));
+    }
+
+    public async Task<IEnumerable<string>> GetUserRolesAsync(string userId)
+    {
+        var user = await userManager.FindByIdAsync(userId);
+        if (user is null)
+        {
+            return Enumerable.Empty<string>();
+        }
+
+        return await userManager.GetRolesAsync(user);
     }
 }

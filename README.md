@@ -18,7 +18,6 @@
 4. Edit the app.settings.json file inside the project AuthApp.Infrastructure.Api.
 5. Run the project migrations for sql server, open the package manager console in visual studio and run `dotnet ef migrations add "CreateDb" --project src\Common\AuthApp.Infrastructure.SqlServer\AuthApp.Infrastructure.SqlServer.csproj --startup-project src\Apps\AuthApp.Api.csproj`. You should see Migrations folder inside project AuthApp.Infrastructure.SqlServer
 6. Run the project using IISExpress profile. Project will take some time, as it will take some time seeding the initial application data.
-7. Initial run will also create default `products` index on elastic search container.
 8. Download the postman collection from root of the project to test dynamic search.
 
 

@@ -2,6 +2,8 @@
 
 public class LoginDto
 {
-    public required string Token { get; set; }
-    public DateTime Expiration { get; set; }
+    public ApplicationUserDto User { get; set; }
+
+    public string Token { get; set; }
+    public string RefreshToken { get; set; }
 }

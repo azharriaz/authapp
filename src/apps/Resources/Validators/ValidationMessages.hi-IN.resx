@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- Hindi Translations -->
+  <data name="user.id.required" xml:space="preserve">
+    <value>उपयोगकर्ता आईडी आवश्यक है</value>
+  </data>
+  <data name="user.id.maxlength" xml:space="preserve">
+    <value>उपयोगकर्ता आईडी {0} अक्षरों से अधिक नहीं होनी चाहिए</value>
+  </data>
+  <data name="username.required" xml:space="preserve">
+    <value>उपयोगकर्ता नाम आवश्यक है</value>
+  </data>
+    <data name="firstname.required" xml:space="preserve">
+    <value>उपयोगकर्ता नाम आवश्यक है</value>
+  </data>
+  <data name="lastname.required" xml:space="preserve">
+    <value>उपयोगकर्ता नाम आवश्यक है</value>
+  </data>
+  <data name="username.minlength" xml:space="preserve">
+    <value>उपयोगकर्ता नाम कम से कम {0} अक्षरों का होना चाहिए</value>
+  </data>
+  <data name="username.maxlength" xml:space="preserve">
+    <value>उपयोगकर्ता नाम {0} अक्षरों से अधिक नहीं हो सकता</value>
+  </data>
+  <data name="username.invalid_chars" xml:space="preserve">
+    <value>उपयोगकर्ता नाम में अमान्य अक्षर हैं</value>
+  </data>
+  <data name="username.unsafe" xml:space="preserve">
+    <value>उपयोगकर्ता नाम में असुरक्षित अक्षर हैं</value>
+  </data>
+  <data name="email.required" xml:space="preserve">
+    <value>ईमेल आवश्यक है</value>
+  </data>
+  <data name="email.invalid" xml:space="preserve">
+    <value>ईमेल प्रारूप अमान्य है</value>
+  </data>
+  <data name="roles.required" xml:space="preserve">
+    <value>भूमिकाएँ आवश्यक हैं</value>
+  </data>
+  <data name="password.required" xml:space="preserve">
+    <value>पासवर्ड आवश्यक है</value>
+  </data>
+  <data name="password.minlength" xml:space="preserve">
+    <value>पासवर्ड कम से कम {0} अक्षरों का होना चाहिए</value>
+  </data>
+  <data name="password.maxlength" xml:space="preserve">
+    <value>पासवर्ड {0} अक्षरों से अधिक नहीं हो सकता</value>
+  </data>
+  <data name="password.uppercase" xml:space="preserve">
+    <value>पासवर्ड में कम से कम एक बड़ा अक्षर होना चाहिए</value>
+  </data>
+  <data name="password.lowercase" xml:space="preserve">
+    <value>पासवर्ड में कम से कम एक छोटा अक्षर होना चाहिए</value>
+  </data>
+  <data name="password.digit" xml:space="preserve">
+    <value>पासवर्ड में कम से कम एक अंक होना चाहिए</value>
+  </data>
+  <data name="password.unsafe" xml:space="preserve">
+    <value>पासवर्ड में असुरक्षित अक्षर हैं</value>
+  </data>
+
+  <!-- Role Validation Messages -->
+  <data name="role.id.required" xml:space="preserve">
+    <value>भूमिका आईडी आवश्यक है</value>
+  </data>
+  <data name="role.name.required" xml:space="preserve">
+    <value>भूमिका नाम आवश्यक है</value>
+  </data>
+  <data name="role.name.maxlength" xml:space="preserve">
+    <value>भूमिका नाम {0} अक्षरों से अधिक नहीं हो सकता</value>
+  </data>
+  <data name="role.description.maxlength" xml:space="preserve">
+    <value>भूमिका विवरण {0} अक्षरों से अधिक नहीं हो सकता</value>
+  </data>
+
+  <!-- Common Validation Messages -->
+  <data name="validation.generic_error" xml:space="preserve">
+    <value>एक सत्यापन त्रुटि हुई</value>
+  </data>
+  <data name="validation.sql_injection" xml:space="preserve">
+    <value>इनपुट में संभावित असुरक्षित अक्षर शामिल हैं</value>
+  </data>
+</root>

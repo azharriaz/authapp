@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.Localization;
 
-namespace AuthApp.Application.Auth.Commands.CreateUser;
+namespace AuthApp.Application.ApplicationUser.Commands.CreateUser;
 
 public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
 {
@@ -10,6 +10,12 @@ public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
         RuleFor(x => x.Username)
             .NotEmpty().WithMessage(localizer["username.required"])
             .MinimumLength(3).WithMessage(localizer["username.minlength", 3]);
+
+        RuleFor(x => x.FirstName)
+            .NotEmpty().WithMessage(localizer["firstname.required"]);
+
+        RuleFor(x => x.LastName)
+            .NotEmpty().WithMessage(localizer["lastname.required"]);
 
         RuleFor(x => x.Email)
             .NotEmpty().WithMessage(localizer["email.required"])
