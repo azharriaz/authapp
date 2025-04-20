@@ -155,106 +155,6 @@ public class UsersControllerTests
     }
     #endregion
 
-    #region ConvertCurrency TestCases
-
-    //[Fact]
-    //public async Task ConvertCurrency_ValidRequest_ReturnsOkResult()
-    //{
-    //    // Arrange
-    //    var request = await JsonHelper.GetRequestModelAsync<ConvertCurrencyQuery>(_testDataPath, ActionTypeEnum.Convert);
-    //    var requestUri = $"api/currencies/convert";
-    //    var cancellationToken = new CancellationToken();
-
-    //    ConvertCurrencyConfigureServices(invalidDetails: false);
-
-    //    // Act
-    //    var response = await _httpClient.GetAsync(requestUri, cancellationToken);
-
-    //    // Assert
-    //    Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-
-    //    var content = await response.Content.ReadAsStringAsync();
-
-    //    var convertCurrencyResponse = JsonSerializer.Deserialize<ServiceResult<ExchangeRatesDto>>(content, new JsonSerializerOptions
-    //    {
-    //        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-    //    });
-
-    //    Assert.NotNull(convertCurrencyResponse);
-
-    //    Assert.IsType<ExchangeRatesDto>(convertCurrencyResponse.Data);
-
-    //    Assert.True(convertCurrencyResponse.Succeeded);
-    //}
-
-    //[Fact]
-    //public async Task ConvertCurrency_InvalidRequest_ReturnsBadRequest()
-    //{
-    //    // Arrange
-    //    var request = new ConvertCurrencyQuery() { FromCurrency = string.Empty, ToCurrency = string.Empty };
-    //    var requestUri = "api/currencies/convert";
-    //    var cancellationToken = new CancellationToken();
-
-    //    ConvertCurrencyConfigureServices(invalidDetails: true);
-
-    //    // Act
-    //    var response = await _httpClient.GetAsync(requestUri, cancellationToken);
-
-    //    // Assert
-    //    Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-
-    //    var content = await response.Content.ReadAsStringAsync();
-
-    //    var convertCurrencyResponse = JsonSerializer.Deserialize<ServiceResult<ExchangeRatesDto>>(content, new JsonSerializerOptions
-    //    {
-    //        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-    //    });
-
-    //    Assert.NotNull(convertCurrencyResponse);
-
-    //    Assert.False(convertCurrencyResponse.Succeeded);
-
-    //    Assert.Null(convertCurrencyResponse.Data);
-    //}
-
-    //private void ConvertCurrencyConfigureServices(bool invalidDetails)
-    //{
-    //    var response = JsonHelper.GetRequestModelAsync<ExchangeRateResponse>(_testDataPath, ActionTypeEnum.ConvertResponse).Result;
-
-    //    var mockExchangeRateResponse = new ExchangeRateResponse
-    //    {
-    //        Amount = 100.0,
-    //        Base = "USD",
-    //        Date = DateOnly.FromDateTime(DateTime.Now),
-    //        Rates = new Dictionary<string, double>
-    //        {
-    //            { "EUR", 0.85 },
-    //            { "GBP", 0.75 }
-    //        }
-    //    };
-
-    //    // Setup GetOrCreateAsync to return the mockExchangeRateResponse when called
-    //    _mockHybridCache.Setup(d => d.GetOrCreateAsync<ExchangeRateResponse>(
-    //            It.IsAny<string>(),
-    //            It.IsAny<Func<CancellationToken, ValueTask<ExchangeRateResponse>>>(),
-    //            It.IsAny<HybridCacheEntryOptions>(),
-    //            It.IsAny<CancellationToken>())
-    //        )
-    //        .ReturnsAsync(invalidDetails ? default : mockExchangeRateResponse);
-
-    //    _mockIdentityService
-    //            .Setup(d => d.ConvertCurrencyAsync(It.IsAny<ConvertCurrencyQuery>(), It.IsAny<CancellationToken>()))
-    //            .ReturnsAsync(invalidDetails ? default : response);
-
-    //    _serviceCollection.AddSingleton(_mockIdentityService.Object);
-    //    _serviceCollection.AddSingleton(_mockHybridCache.Object);
-
-    //    ConfigureServices();
-    //}
-    #endregion
-
-    #region Common
-
     private void ConfigureServices(bool isAdminRole = false)
     {
         using var host = new HostBuilder()
@@ -321,7 +221,6 @@ public class UsersControllerTests
 
         _httpClient = host.Result.GetTestClient();
     }
-    #endregion
 
     /// <summary>
     /// Mapster(Mapper) global configuration settings
