@@ -18,45 +18,70 @@
 4. Edit the app.settings.json file inside the project AuthApp.Infrastructure.Api.
 5. Run the project migrations for sql server, open the package manager console in visual studio and run `dotnet ef migrations add "CreateDb" --project src\Common\AuthApp.Infrastructure.SqlServer\AuthApp.Infrastructure.SqlServer.csproj --startup-project src\Apps\AuthApp.Api.csproj`. You should see Migrations folder inside project AuthApp.Infrastructure.SqlServer
 6. Run the project using IISExpress profile. Project will take some time, as it will take some time seeding the initial application data.
-8. Download the postman collection from root of the project to test dynamic search.
+8. Download the postman collection from root of the project to test the apis.
 
 
-## Product Search API Details `api/products/search`:
-
-1. Api accepts json body and structure of body is below:
-
+## Authentication apis details:
+1. `api/auth/login` Api accepts json body and structure of body is below:
+Action: Post
 `{
-  "query": "ultricies",
-  "criterias": [
-    {
-      "param": "name",
-      "value": "Green Angular Board 3000",
-      "conjunction": "and"
-    }
-  ],
-  "sorting": [
-    {
-      "field": "name",
-      "order": "asc"
-    }
-  ],
-  "pageSize": 50
-}`.
+  "username": "azharriaz",
+  "password": "Azhar@321"
+}`
 
-2. `query` is the main search term. i.e. products will be fetched mainly based on the query string provided i.e. following fields will be scaned name, description, brand, product type.
+2. `api/auth/refresh-token` Api accepts json body with structure:
+Action: Post
+`{
+  "accessToken": "{{jwtToken}}",
+  "refreshToken": "{{refreshToken}}"
+}`
 
-3. `criterias` are list of objects, and each object contains 
-   i. `param` name of the field criteria to be applied on. Allowed values are {name, description, brand, type}.
-   ii. `value` is string which is to be searched.
-   iii. `conjuction` (optional by default each object is added with or clause) are operators which can be used to define nature of link between criterias. For instance if `or` is provided current query will be concated with previous as `previous_dynamic_query or brand="Ford"`. Allowed values for `conjuction` are {"or", "and", "gt", "lt"}.
+## Users apis details:
+1. `api/users` Api accepts json body and structure of body is below:
+Action: Post
+`{
+  "username": "JohnDoe",
+  "email": "john@example.com",
+  "password": "Azhar@321",
+  "firstname":"John",
+  "lastname": "Doe",
+  "roles": ["Manager"]
+}`
 
-4. `sorting` are list of objects, and each object contains
-    i. `field` name of the field which is to be sorted by and Allowed values are {name, description, brand, type}.
-    ii. `order` is the data sorting order, Allowed values are {"asc", "desc"}.
-5. To test the search api import the collection in postman `ElasticSearch.postman_collection.json` and run the `Login` request. Copy the jwt token from response body and paste into `SearchByQuery` request's Authorization section. 
-6. Edit the body section with desired value and hit Send button to see the results.
+2. `api/users` Api accepts json body and structure of body is below:
+Action: Put
+`{
+  "userid": "7a1da7e8-4177-411c-b923-e9960851cc39",
+  "name": "John D Updated",
+  "email": "john.doe@example.com",
+  "roles": ["Administrator"]
+}`
 
-## Gifs are attached in the same directory to help understand usage of API through postman collection.
+3. `api/users/{userId}` Api accepts query param userId (sample: '7a1da7e8-4177-411c-b923-e9960851cc39').
+Action: Get
+
+3. `api/users/{userId}` Api accepts query param userId (sample: '7a1da7e8-4177-411c-b923-e9960851cc39').
+Action: Delete
+
+## Roles apis details:
+1. `api/roles` Api accepts json body and structure of body is below:
+Action: Post
+`{
+  "name": "Manager"
+}`
+
+2. `api/roles` Api accepts json body and structure of body is below:
+Action: Put
+`{
+  "id": "27c22eeb-36be-4b0e-bf04-59392fd64eec",
+  "name": "Manager Updated"
+}`
+
+3. `api/roles/{roleId}` Api accepts query param roleId (sample: '27c22eeb-36be-4b0e-bf04-59392fd64eec').
+Action: Get
+
+3. `api/roles/{roleId}` Api accepts query param roleId (sample: '27c22eeb-36be-4b0e-bf04-59392fd64eec').
+Action: Delete
 
 ### Database Configuration
 
@@ -97,7 +122,7 @@ This layer contains classes for accessing external resources such as file system
 
 ### WebApi
 
-This layer is a web api application based on ASP.NET 6.0.x. This layer depends on both the Application and Infrastructure layers, however, the dependency on Infrastructure is only to support dependency injection. Therefore only *Startup.cs* should reference Infrastructure.
+This layer is a web api application based on ASP.NET 9.0.x. This layer depends on both the Application and Infrastructure layers, however, the dependency on Infrastructure is only to support dependency injection. Therefore only *Startup.cs* should reference Infrastructure.
 
 ### Logs
 
